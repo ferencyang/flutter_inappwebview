@@ -1,17 +1,19 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
 import 'package:flutter_inappwebview_example/chrome_safari_browser_example.screen.dart';
 import 'package:flutter_inappwebview_example/headless_in_app_webview.screen.dart';
 import 'package:flutter_inappwebview_example/in_app_webiew_example.screen.dart';
 import 'package:flutter_inappwebview_example/in_app_browser_example.screen.dart';
 
-// InAppLocalhostServer localhostServer = new InAppLocalhostServer();
+InAppLocalhostServer localhostServer = new InAppLocalhostServer();
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // await localhostServer.start();
+  await localhostServer.start();
   runApp(new MyApp());
 }
 

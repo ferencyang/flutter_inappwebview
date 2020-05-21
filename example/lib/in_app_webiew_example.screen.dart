@@ -49,13 +49,13 @@ class _InAppWebViewExampleScreenState extends State<InAppWebViewExampleScreen> {
                   decoration:
                   BoxDecoration(border: Border.all(color: Colors.blueAccent)),
                   child: InAppWebView(
-                    initialUrl: "s",
-                    // initialFile: "assets/index.html",
+                    //initialUrl: "https://www.baidu.com",
+                    initialFile: "assets/index.html",
                     initialHeaders: {},
                     initialOptions: InAppWebViewGroupOptions(
-                        crossPlatform: InAppWebViewOptions(
-                          debuggingEnabled: true,
-                        ),
+                      crossPlatform: InAppWebViewOptions(
+                        debuggingEnabled: true,
+                      ),
                     ),
                     onWebViewCreated: (InAppWebViewController controller) {
                       webView = controller;
@@ -72,6 +72,24 @@ class _InAppWebViewExampleScreenState extends State<InAppWebViewExampleScreen> {
                       setState(() {
                         this.url = url;
                       });
+                      //await controller.injectJavascriptFileFromAsset(assetFilePath:"assets/js/jquery-3.5.1.min.js");
+//                      print("inectjavascript");
+//                      var x="";
+//                      var s=controller.getHtml();
+//                      print(s);
+
+
+                      // inject javascript file from an url
+                      //await controller.injectJavascriptFileFromAsset(assetFilePath:"assets/js/jquery-3.5.1.min.js");
+
+                      //await controller.injectJavascriptFileFromUrl(urlFile: "https://code.jquery.com/jquery-3.3.1.min.js");
+                      // wait for jquery to be loaded
+                      //await Future.delayed(Duration(milliseconds: 1000));
+                      //String result3 = await controller.evaluateJavascript(source: "\$('p').click(function(){\$(this).hide();});");
+                      //print(result3); // prints the body html
+
+
+
                       /*var origins = await WebStorageManager.instance().android.getOrigins();
                       for (var origin in origins) {
                         print(origin);
